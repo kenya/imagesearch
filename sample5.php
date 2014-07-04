@@ -69,7 +69,7 @@ if (isset($_POST["keyword"]) && isset($number_han)) {
     echo "<hr><br>\n";
     $search_result = array( array() );
     foreach($tf_data[@$_POST["keyword"]] as $key => $val ) {
-      if ((@$number_han == @$fc_data[$key] && @$number_han!=null) || $num == -1){
+      if ((($number_han == $fc_data[$key] && $number_han!=null) || $num == -1) && isset($fc_data[$key])) {
         // $search_result[$result_num] = array(){$key, $val, $fc_data[$key]};
         $search_result[$result_num][0] = $key;
         $search_result[$result_num][1] = $val;

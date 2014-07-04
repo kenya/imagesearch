@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <link rel="stylesheet" href="sample5.css" type="text/css">
-<script src="js/jquery-1.11.0.min.js"></script>
-<script src="js/lightbox.min.js"></script>
-<link href="css/lightbox.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/sample5.css" type="text/css">
+  <script src="js/jquery-1.11.0.min.js"></script>
+  <script src="js/lightbox.min.js"></script>
+  <link href="css/lightbox.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>集合写真検索システム</title>
   </head>
@@ -63,7 +63,7 @@ if (isset($_POST["keyword"]) && isset($_POST["number"])) {
     
     foreach($tf_data[@$_POST["keyword"]] as $key => $val ) {
       if (@$_POST["number"] == @$fc_data[$key] && @$_POST["number"]<>null){
-		echo "<img src='$key'><br>\n";
+		echo "<a href='$key' rel='lightbox'><img src='$key'></a><br>\n";
 		echo "キーワード出現回数＝".$val."回<br>\n";
 		echo "写真中の人の数＝".@$fc_data[$key]."人<br>\n";
 		echo "$key<br><br><br>\n";

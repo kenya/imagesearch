@@ -11,8 +11,8 @@
   <body>
 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">  
    <p>    
-   検索キーワード：<input type="text" name="keyword" size=20/><br>
-   写真中の人の数：<input type="text" name="number" size=20 /><br>
+   検索キーワード：<input type="text" placeholder="input word" name="keyword" size=20/><br>
+   写真中の人の数：<input type="text" placeholder="input person number"name="number" size=20 /><br>
    <input type="submit" value="Search!" />  
    </p>
 </form>

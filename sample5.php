@@ -96,7 +96,7 @@ if(isset($search_result)) {
 	  echo "<a href='$value[0]' rel='lightbox'><img src='$value[0]'></a><br>\n";
       echo "キーワード出現回数＝".$value[1]."回<br>\n";
       echo "写真中の人の数＝".$value[2]."人<br>\n";
-      echo "$key<br><br><br>\n";
+      echo "$value[0]<br><br><br>\n";
   }
 }
 if(isset($_POST["keyword"]))

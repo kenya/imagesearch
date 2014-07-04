@@ -2,7 +2,7 @@
 <html>
   <head>
   <link rel="stylesheet" href="sample5.css" type="text/css">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./jquery-1.11.1.js"></script>
     <title>集合写真検索システム</title>
   </head>
   <body>
@@ -10,7 +10,7 @@
    <p>    
    検索キーワード：<input type="text" name="keyword" size=20 /><br>
    写真中の人の数：<input type="text" name="number" size=20  placeholder="1~3人までね"/><br>
-   <input type="submit" value="Search!" />  
+   <input type="submit" value="Search!" /> 
    </p>
 </form>
 

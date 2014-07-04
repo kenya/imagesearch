@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <link rel="stylesheet" href="main.css" type="text/css">
+  <link rel="stylesheet" href="sample5.css" type="text/css">
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/lightbox.min.js"></script>
+<link href="css/lightbox.css" rel="stylesheet" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>集合写真検索システム</title>
   </head>

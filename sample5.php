@@ -74,9 +74,6 @@ if (isset($_POST["keyword"]) && isset($number_han)) {
         $search_result[$result_num][0] = $key;
         $search_result[$result_num][1] = $val;
         $search_result[$result_num][2] = $fc_data[$key];
-        if(isset($search_result[2])) {
-          $search_result[$result_num][2] = 0;
-        }
     // echo "<img src='$key'><br>\n";
     // echo "キーワード出現回数＝".$val."回<br>\n";
     // echo "写真中の人の数＝".@$fc_data[$key]."人<br>\n";

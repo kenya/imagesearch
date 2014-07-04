@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <link rel="stylesheet" href="main.css" type="text/css">
+  <link rel="stylesheet" href="sample5.css" type="text/css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>集合写真検索システム</title>
   </head>
   <body>
 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">  
    <p>    
-   検索キーワード：<input type="text" name="keyword" size=20/><br>
-   写真中の人の数：<input type="text" name="number" size=20 /><br>
+   検索キーワード：<input type="text" name="keyword" size=20 /><br>
+   写真中の人の数：<input type="text" name="number" size=20  placeholder="1~3人までね"/><br>
    <input type="submit" value="Search!" />  
    </p>
 </form>

@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE html>
 <html>
   <head>
 <link rel="stylesheet" href="css/sample5.css" type="text/css">
@@ -175,6 +175,11 @@ echo "検索結果は".$result_num."件でした。";
 <br>
 <br>
 <br>
-
+<footer>
+<hr>
+<p align="center">
+Copyright(C) 2014 G_03. All rights reserved.
+</p>
+</footer>
 </body>
 </html>

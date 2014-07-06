@@ -10,6 +10,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript" ></script>
 <script src="./js/waypoints.min.js"></script>
 <script src="./js/waypoints-sticky.min.js"></script>
+<script type="text/javascript" src="js/jquery.MyThumbnail.js"></script>
 <script src="js/intro.js"></script>
 <link rel="stylesheet" href="css/introjs.css" type="text/css">
 <script type="text/javascript">
@@ -17,6 +18,14 @@
 $(document).ready(function() {
 				  $('.my-sticky-element').waypoint('sticky');
 				  });
+
+$(document).ready(function(){
+				  $("#thumbnails img").MyThumbnail({
+												   thumbWidth:  300,
+												   thumbHeight: 300
+												   });
+				  });
+
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>集合写真検索システム</title>
@@ -115,10 +124,10 @@ $(document).ready(function() {
 	
 	if(isset($search_result)) {
 		foreach ($search_result as $value) {
-			echo "<a href='$value[0]' rel='lightbox'><img src='$value[0]'></a><br>\n";
-			echo "キーワード出現回数＝".$value[1]."回<br>\n";
-			echo "写真中の人の数＝".$value[2]."人<br>\n";
-			echo "$value[0]<br><br><br>\n";
+			echo "<span class='thumbbox' id='thumbnails'><a href='$value[0]' rel='lightbox'><img src='$value[0]'></a></span>\n";
+			/*echo "キーワード出現回数＝".$value[1]."回\n";
+			echo "写真中の人の数＝".$value[2]."人\n";
+			echo "$value[0]</span>\n";*/
 		}
 	}
 	if(isset($_POST["keyword"]))

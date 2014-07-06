@@ -32,21 +32,25 @@ $(document).ready(function(){
 </head>
 
 <body>
-<div class="my-sticky-element">
-<span>
+<h2>説明</h2>
+<p>下のチュートリアルスタートのボタンを押すとこのページの使い方を学ぶことができます。</p>
 <button onClick="introJs().start()">チュートリアルスタート</button>
-</span>
+<div class="my-sticky-element">
 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
 <p>
 <span data-intro="ここに検索のキーワードを入力して下さい。" data-step="1">
+<span data-intro="もしくは検索のキーワードだけを入力して、" data-step="4">
 検索キーワード：<input type="text" placeholder="input word" name="keyword" size=20/>
+</span>
 </span>
 <span data-intro="ここに人数を入力して下さい。" data-step="2">
 写真中の人の数：<input type="text" placeholder="input person number"name="number" size=20 />
 </span>
 <span data-intro="検索のキーワードと人数を入力し終えたらこのボタンを押して下さい。" data-step="3">
+<span data-intro="こちらのボタンを押して下さい。" data-step="5">
 <input type="submit" value="Search!" />
-</step>
+</span>
+</span>
 </p>
 </form>
 </div>
@@ -126,8 +130,8 @@ $(document).ready(function(){
 		foreach ($search_result as $value) {
 			echo "<span class='thumbbox' id='thumbnails'><a href='$value[0]' rel='lightbox'><img src='$value[0]'></a></span>\n";
 			/*echo "キーワード出現回数＝".$value[1]."回\n";
-			echo "写真中の人の数＝".$value[2]."人\n";
-			echo "$value[0]</span>\n";*/
+			 echo "写真中の人の数＝".$value[2]."人\n";
+			 echo "$value[0]</span>\n";*/
 		}
 	}
 	if(isset($_POST["keyword"]))

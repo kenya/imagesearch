@@ -21,8 +21,10 @@ $(document).ready(function() {
 
 $(document).ready(function(){
 				  $("#thumbnails img").MyThumbnail({
-												   thumbWidth:  300,
-												   thumbHeight: 300
+												   thumbWidth:  200,
+												   thumbHeight: 150,
+												   backgroundColor:"#ccc",
+												   imageDivClass:"myPic"
 												   });
 				  });
 
@@ -127,15 +129,17 @@ $(document).ready(function(){
 	}
 	
 	if(isset($search_result)) {
+		echo "<div id='thumbnails'>\n";
 		foreach ($search_result as $value) {
-			echo "<span class='thumbbox' id='thumbnails'><a href='$value[0]' rel='lightbox'><img src='$value[0]'></a></span>\n";
+			echo "<a href='$value[0]' rel='lightbox'><img src='$value[0]'></a>\n";
 			/*echo "キーワード出現回数＝".$value[1]."回\n";
 			 echo "写真中の人の数＝".$value[2]."人\n";
 			 echo "$value[0]</span>\n";*/
 		}
+		echo "</div>\n";
 	}
 	if(isset($_POST["keyword"]))
-	echo "検索結果は".$result_num."件でした。";
+	echo "<p>検索結果は".$result_num."件でした。</p>";
 	
 	?>
 <br>

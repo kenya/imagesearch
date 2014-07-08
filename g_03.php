@@ -64,6 +64,9 @@ $(document).ready(function(){
 												   });
 				  });
 
+$(function() {
+  $('div #pic').lightBox();
+  });
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>集合写真検索システム</title>
@@ -76,7 +79,7 @@ $(document).ready(function(){
     for($i=0;$i<$count;$i++){
         $word=explode("&nbsp;&nbsp;&nbsp;&nbsp;",$val[$count-$i-1]);
         
-        echo "「"."<a href='sample5.php?keyword=$word[0]&number=$word[1]'>".$val[$count-$i-1]."」</a>";
+        echo "「"."<a href='g_03.php?keyword=$word[0]&number=$word[1]'>".$val[$count-$i-1]."」</a>";
     }
     if(isset($_GET['keyword']) && isset($_GET['number'])){
         $_POST["keyword"]=$_GET['keyword'];
@@ -90,12 +93,12 @@ $(document).ready(function(){
 <div class="my-sticky-element">
 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
 <p>
-<span data-intro="ここに検索のキーワードを入力して下さい。" data-step="1">
+<span data-intro="ここに検索のキーワードを入力して下さい。　例: 大学" data-step="1">
 <span data-intro="もしくは検索のキーワードだけを入力して、" data-step="4">
 検索キーワード：<input type="text" placeholder="input word" name="keyword" size=20/>
 </span>
 </span>
-<span data-intro="ここに人数を入力して下さい。" data-step="2">
+<span data-intro="ここに人数を入力して下さい。 例: 4" data-step="2">
 写真中の人の数：<input type="text" placeholder="input person number"name="number" size=20 />
 </span>
 <span data-intro="検索のキーワードと人数を入力し終えたらこのボタンを押して下さい。" data-step="3">
@@ -180,12 +183,10 @@ $(document).ready(function(){
 	
 	if(isset($search_result)) {
 		echo "<div id='thumbnails'>\n";
-		echo "<ul class='pic'>";
+		echo "<ul class='pic' id='pic'>";
 		foreach ($search_result as $value) {
-			echo "<li><a href='$value[0]' rel='lightbox'><img src='$value[0]'></a><br>\n";
-			echo "キーワード出現回数＝".$value[1]."回<br>\n";
-			echo "写真中の人の数＝".$value[2]."人<br>\n";
-			echo "$value[0]</li>\n";
+			echo "<li><a href='$value[0]' rel='lightbox' data-lightbox='pics' data-title='キーワード出現回数＝$value[1]回<br>写真中の人の数＝$value[2]人<br>$value[0]'><img src='$value[0]'></a><br>\n";
+			echo "</li>\n";
 		}
 		echo "</ul></div>\n";
 	}

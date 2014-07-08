@@ -142,36 +142,42 @@ $(function() {
 	
 		// 以下、検索処理
 	$result_num = 0;
-	$number_han = mb_convert_kana($_POST["number"], 'ran', "UTF-8");
 	$num;
 	$search_result; //[][0:ファイル名 1:キーワード頻度 2:人数]
+	$searching_number = array(); //人数の範囲指定用配列
+	$number_han = mb_convert_kana($_POST["number"], 'ran', "UTF-8");
+	$number_han = explode("-", $number_han);
 	
 	if (isset($_POST["keyword"]) && isset($number_han)) {
-		if(array_key_exists($_POST["keyword"], $tf_data) && $_POST["keyword"] <>null ){
-			
-			if($number_han==null){
+		if(check_number($number_han) == 0) {
+			echo "人数を正しく入力して下さい。";
+		} elseif(array_key_exists($_POST["keyword"], $tf_data) && $_POST["keyword"] <>null ){
+			if($number_han[0]==null){
 				echo "キーワード「".$_POST["keyword"]."」　人数「指定なし」での検索結果<br>\n";
 				$num = -1;
-			}elseif (!preg_match("/^[0-9]+$/", $number_han)) {
-				echo "人数を正しく入力して下さい。";
+				array_push($searching_number, $number_han);
+			} elseif(count($number_han) == 2) {
+				echo "キーワード「".$_POST["keyword"]."」　人数「$number_han[0]人から $number_han[1]人」での検索結果<br>\n";
+				foreach($number_han as $val) {
+					array_push($searching_number, $val);
+				}
 			} else {
 				echo "キーワード「".$_POST["keyword"]."」　人数「";
-				echo $number_han."人」での検索結果<br>\n";
+				echo $number_han[0]."人」での検索結果<br>\n";
 				$num = 0;
+				array_push($searching_number, $number_han);
 			}
+			
 			echo "<hr><br>\n";
 			$search_result = array( array() );
-			foreach($tf_data[@$_POST["keyword"]] as $key => $val ) {
-				if ((($number_han == $fc_data[$key] && $number_han!=null) || $num == -1) && isset($fc_data[$key])) {
-						// $search_result[$result_num] = array(){$key, $val, $fc_data[$key]};
-					$search_result[$result_num][0] = $key;
-					$search_result[$result_num][1] = $val;
-					$search_result[$result_num][2] = $fc_data[$key];
-						// echo "<img src='$key'><br>\n";
-						// echo "キーワード出現回数＝".$val."回<br>\n";
-						// echo "写真中の人の数＝".@$fc_data[$key]."人<br>\n";
-						// echo "$key<br><br><br>\n";
-					$result_num++;
+			foreach($searching_number as $val_number){
+				foreach($tf_data[@$_POST["keyword"]] as $key => $val ) {
+					if ((($val_number == $fc_data[$key] && $val_number!=null) || $num == -1) && isset($fc_data[$key])) {
+						$search_result[$result_num][0] = $key;
+						$search_result[$result_num][1] = $val;
+						$search_result[$result_num][2] = $fc_data[$key];
+						$result_num++;
+					}
 				}
 			}
 		} elseif (@$_POST["keyword"]==null) {
@@ -193,6 +199,15 @@ $(function() {
 	if(isset($_POST["keyword"]))
 	echo "<p>検索結果は".$result_num."件でした。</p>";
 	
+	function check_number($number){
+		if(@count($number) == 2 && preg_match("/^[0-9]+$/", $number[0]) && preg_match("/^[0-9]+$/", $number[1])) {
+			return 1;
+		} elseif(@preg_match("/^[0-9]+$/", $number[0]) && !isset($number[1]) || isset($number[0])) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
 	?>
 <br>
 <br>

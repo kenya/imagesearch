@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    
     $life = 60 * 60 * 24 ;
     $cookieValue =array(($_POST["keyword"]),($_POST["number"]));
     $val=$_COOKIE["cdata"];
@@ -111,7 +113,6 @@ $(function() {
 </div>
 
 <?php
-	
 		// tfファイルの読み込み　１行ずつ　最後まで
 	$tf_data = array( array());
 	$tffile = "tfimg.all";
@@ -186,7 +187,9 @@ $(function() {
 			echo '検索キーワード「'.@$_POST["keyword"].'」に合致する写真はありません。';
 		}
 	}
-	
+    
+	echo "検索結果は".$_SESSION['result_num']."件でした。";
+
 	if(isset($search_result)) {
 		echo "<div id='thumbnails'>\n";
 		echo "<ul class='pic' id='pic'>";
@@ -197,9 +200,10 @@ $(function() {
 		echo "</ul></div>\n";
 	}
 	if(isset($_POST["keyword"]))
-	echo "<p>検索結果は".$result_num."件でした。</p>";
 	
-	function check_number($number){
+    $_SESSION['result_num']=$result_num;
+	
+    function check_number($number){
 		if(@count($number) == 2 && preg_match("/^[0-9]+$/", $number[0]) && preg_match("/^[0-9]+$/", $number[1])) {
 			if($number[0] == $number[1] || $number[0] < 1 || $number[1] < 1) {
 				return 0;
@@ -212,6 +216,7 @@ $(function() {
 			return 0;
 		}
 	}
+    
 	?>
 <br>
 <br>

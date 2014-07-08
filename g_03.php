@@ -165,7 +165,7 @@ $(function() {
 				echo "キーワード「".$_POST["keyword"]."」　人数「";
 				echo $number_han[0]."人」での検索結果<br>\n";
 				$num = 0;
-				array_push($searching_number, $number_han);
+				array_push($searching_number, $number_han[0]);
 			}
 			
 			echo "<hr><br>\n";

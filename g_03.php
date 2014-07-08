@@ -88,7 +88,7 @@ $(function() {
         $_POST["number"]=$_GET['number'];
     }
     ?>
-
+<h1>集合検索システムサービス</h1>
 <h2>説明</h2>
 <p>下のチュートリアルスタートのボタンを押すとこのページの使い方を学ぶことができます。</p>
 <button onClick="introJs().start()">チュートリアルスタート</button>
@@ -187,21 +187,20 @@ $(function() {
 			echo '検索キーワード「'.@$_POST["keyword"].'」に合致する写真はありません。';
 		}
 	}
-    
-	echo "検索結果は".$_SESSION['result_num']."件でした。";
-
+	
+	if(isset($_POST["keyword"]))
+		echo "検索結果は".$result_num."件でした。";
+	
 	if(isset($search_result)) {
 		echo "<div id='thumbnails'>\n";
 		echo "<ul class='pic' id='pic'>";
 		foreach ($search_result as $value) {
-			echo "<li><a href='$value[0]' rel='lightbox' data-lightbox='pics' data-title='キーワード出現回数＝$value[1]回<br>写真中の人の数＝$value[2]人<br>$value[0]'><img src='$value[0]'></a><br>\n";
+			echo "<li><a href='$value[0]' rel='lightbox' data-lightbox='pics' data-title='キーワード出現回数＝$value[1]回<br>写真中の人の数＝$value[2]人<br>画像へのパス:$value[0]'><img src='$value[0]'></a><br>\n";
 			echo "</li>\n";
 		}
 		echo "</ul></div>\n";
 	}
-	if(isset($_POST["keyword"]))
 	
-    $_SESSION['result_num']=$result_num;
 	
     function check_number($number){
 		if(@count($number) == 2 && preg_match("/^[0-9]+$/", $number[0]) && preg_match("/^[0-9]+$/", $number[1])) {
@@ -218,69 +217,6 @@ $(function() {
 	}
     
 	?>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 <footer>
 <hr>
 <p align="center">

@@ -100,7 +100,7 @@ $(function() {
 検索キーワード：<input type="text" placeholder="input word" name="keyword" size=20/>
 </span>
 </span>
-<span data-intro="ここに人数を入力して下さい。 例: 4" data-step="2">
+<span data-intro="ここに人数を入力して下さい。 例: 4<br>人数の範囲指定をする場合<br>一人から四人を範囲指定する例: 1-4" data-step="2">
 写真中の人の数：<input type="text" placeholder="input person number"name="number" size=20 />
 </span>
 <span data-intro="検索のキーワードと人数を入力し終えたらこのボタンを押して下さい。" data-step="3">

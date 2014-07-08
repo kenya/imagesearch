@@ -201,7 +201,11 @@ $(function() {
 	
 	function check_number($number){
 		if(@count($number) == 2 && preg_match("/^[0-9]+$/", $number[0]) && preg_match("/^[0-9]+$/", $number[1])) {
-			return 1;
+			if($number[0] == $number[1] || $number[0] < 1 || $number[1] < 1) {
+				return 0;
+			}else {
+				return 1;
+			}
 		} elseif(@preg_match("/^[0-9]+$/", $number[0]) && !isset($number[1]) || isset($number[0])) {
 			return 1;
 		} else {

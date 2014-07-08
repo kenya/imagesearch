@@ -79,7 +79,7 @@ $(function() {
     for($i=0;$i<$count;$i++){
         $word=explode("&nbsp;&nbsp;&nbsp;&nbsp;",$val[$count-$i-1]);
         
-        echo "「"."<a href='g_03.php?keyword=$word[0]&number=$word[1]'>".$val[$count-$i-1]."」</a>";
+        echo "「"."<a href='g_03.php?keyword=$word[0]&number=$word[1]'>".$val[$count-$i-1]."人」</a>";
     }
     if(isset($_GET['keyword']) && isset($_GET['number'])){
         $_POST["keyword"]=$_GET['keyword'];

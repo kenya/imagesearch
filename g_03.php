@@ -57,6 +57,10 @@ $(document).ready(function() {
 				  $('.my-sticky-element').waypoint('sticky');
 				  });
 
+$(function() {
+				  $('#sita').waypoint('sticky');
+				  });
+
 $(document).ready(function(){
 				  $("#thumbnails img").MyThumbnail({
 												   thumbWidth:  200,
@@ -88,7 +92,7 @@ $(function() {
         $_POST["number"]=$_GET['number'];
     }
     ?>
-<h1>集合検索システムサービス</h1>
+<h1>集合あ写真検索システムサービス</h1>
 <h2>説明</h2>
 <p>下のチュートリアルスタートのボタンを押すとこのページの使い方を学ぶことができます。</p>
 <button onClick="introJs().start()">チュートリアルスタート</button>
@@ -217,11 +221,13 @@ $(function() {
 	}
     
 	?>
+
+<div id="sita">
 <footer>
-<hr>
 <p align="center">
 Copyright(C) 2014 G_03. All rights reserved.
 </p>
 </footer>
+</div>
 </body>
 </html>

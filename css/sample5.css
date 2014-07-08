@@ -32,7 +32,26 @@ body{
 
 .myPic
 {
-margin:10px;
+margin:40px;
+padding:60px;
 border-radius:10px;
 border:1px solid #ccc;
+
+}
+
+ul.pic li{
+	float: left;
+	list-style:none;
+
+}
+
+#sita.stuck{
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	background-color: #ffffff;
+		margin: 0 auto;
+		font-size:0.9em;
+		color:#000000;
 }

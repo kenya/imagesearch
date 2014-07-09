@@ -24,15 +24,10 @@
 		</style>
 	</head>
 	<body>
-<form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">  
-   <p>    
-   検索キーワード：<input type="text" name="keyword" size=20 /><br>
-   写真中の人の数：<input type="text" name="number" size=20  placeholder="1~3人までね"/><br>
-   <input type="submit" value="Search!" /> 
-   </p>
-</form>
+
 		<div id="container"></div>
-		<div id="info"><a href="http://threejs.org" target="_blank">three.js</a> - birds demo</div>
+		<div id="info">
+		</div>
 
 		<script src="js/three.min.js"></script>
 		<script src="obj/Bird.js"></script>
@@ -383,8 +378,8 @@
 				stats.domElement.style.left = '0px';
 				stats.domElement.style.top = '0px';
 
-				document.getElementById( 'container' ).appendChild(stats.domElement);
-
+				//document.getElementById( 'container' ).appendChild(stats.domElement);
+				//show fps
 				//
 
 				window.addEventListener( 'resize', onWindowResize, false );

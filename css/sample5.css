@@ -27,16 +27,14 @@ body{
 		background: -o-linear-gradient(#000, #303030);
 		background: -ms-linear-gradient(#000, #303030);
 		background: linear-gradient(#000, #303030);
-
+		letter-spacing: -1px;
     }
 
-.myPic
-{
+.myPic{
 margin:40px;
 padding:60px;
 border-radius:10px;
 border:1px solid #ccc;
-
 }
 
 ul.pic li{
@@ -45,13 +43,11 @@ ul.pic li{
 
 }
 
-#sita.stuck{
-	position:fixed;
-	bottom:0;
-	left:0;
-	right:0;
-	background-color: #ffffff;
-		margin: 0 auto;
-		font-size:0.9em;
-		color:#000000;
+footer{
+position: fixed;
+width:100%;
+text-align:center;
+top:100%;
+margin-top: -47px;
+background-color:#ffffff;
 }

@@ -1,0 +1,10 @@
+html,
+body { height: 100%; }
+body {
+	background-image: url(//i.imgur.com/zGU49Py.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	color: #fff;
+	-webkit-font-smoothing:antialiased;
+}

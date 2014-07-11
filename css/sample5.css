@@ -4,11 +4,15 @@ body{
 	line-height:1.4;
 	color:#333;
 	font-family:Arial, sans-serif;
-	font-size:0.9em;
+	font-size:1.4em;
 	background-color: #ffffff;
 	text-align: center;
 	margin: 0px;
 	overflow: hidden;
+}
+input[type=text]{
+width:200px;
+height:25px;
 }
 #info {
 				position: absolute;
@@ -52,6 +56,6 @@ position: fixed;
 width:100%;
 text-align:center;
 top:100%;
-margin-top: -35px;
+margin-top: -52px;
 background-color:#ffffff;
 }

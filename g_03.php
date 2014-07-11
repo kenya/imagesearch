@@ -82,7 +82,7 @@ $(function() {
         $_POST["number"]=$_GET['number'];
     }
     ?>
-<h1><img src="smith.png" alt="タイトル"></h1>
+<h1><img src="img/smith.png" alt="タイトル"></h1>
 <h2>説明</h2>
 <p>下のチュートリアルスタートのボタンを押すとこのページの使い方を学ぶことができます。</p>
 <button onClick="introJs().start()">チュートリアルスタート</button>

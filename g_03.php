@@ -91,11 +91,11 @@ $(function() {
 <p>
 <span data-intro="ここに検索のキーワードを入力して下さい。　例: 大学" data-step="1">
 <span data-intro="もしくは検索のキーワードだけを入力して、" data-step="4">
-検索キーワード：<input type="text" placeholder="Input word" name="keyword" size="40"/>
+検索キーワード：<input type="text" placeholder="Input word" name="keyword" size=40/>
 </span>
 </span>
 <span data-intro="ここに人数を入力して下さい。 例: 4<br>人数の範囲指定をする場合<br>一人から四人を範囲指定する例: 1-4" data-step="2">
-写真中の人の数：<input type="text" placeholder="Input number of person(s)"name="number" size="30" />
+写真中の人の数：<input type="text" placeholder="Input number of person(s)"name="number" size=30 />
 </span>
 <span data-intro="検索のキーワードと人数を入力し終えたらこのボタンを押して下さい。" data-step="3">
 <span data-intro="こちらのボタンを押して下さい。" data-step="5">

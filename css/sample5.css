@@ -10,10 +10,6 @@ body{
 	margin: 0px;
 	overflow: hidden;
 }
-input[type=text]{
-width:200px;
-height:25px;
-}
 #info {
 				position: absolute;
 				top: 0px; width: 100%;
@@ -50,7 +46,6 @@ ul.pic li{
 	list-style:none;
 
 }
-
 footer{
 position: fixed;
 width:100%;

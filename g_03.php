@@ -1,6 +1,5 @@
 <?php
     session_start();
-    
     $life = 60 * 60 * 24 ;
     $cookieValue =array(($_POST["keyword"]),($_POST["number"]));
     $val=$_COOKIE["cdata"];
@@ -15,13 +14,11 @@
                 setcookie("cdata[$count]",$string,time()+$life);
             }
             else{
-                
                 setcookie("cdata[0]",$val[1],time()+$life);
                 setcookie("cdata[1]",$val[2],time()+$life);
                 setcookie("cdata[2]",$val[3],time()+$life);
                 setcookie("cdata[3]",$string,time()+$life);
             }
-            
         }
         else{
             $cookieValue =array(($_POST["keyword"]),($_POST["number"]));
@@ -30,10 +27,7 @@
             setcookie("cdata[0]",$string,time()+$life);
         }
     }
-    else{}
     ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,7 +65,7 @@ $(function() {
   });
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>集合写真検索システム</title>
+<title>Smith</title>
 </head>
 
 <body>
@@ -81,14 +75,14 @@ $(function() {
     for($i=0;$i<$count;$i++){
         $word=explode("&nbsp;&nbsp;&nbsp;&nbsp;",$val[$count-$i-1]);
         
-        echo "「"."<a href='g_03.php?keyword=$word[0]&number=$word[1]'>".$val[$count-$i-1]."人」</a>";
+        echo "「"."<a href='g_03.php?keyword=$word[0]&number=$word[1]'>".$val[$count-$i-1]."」</a>";
     }
     if(isset($_GET['keyword']) && isset($_GET['number'])){
         $_POST["keyword"]=$_GET['keyword'];
         $_POST["number"]=$_GET['number'];
     }
     ?>
-<h1>集合写真検索システムサービス</h1>
+<h1><img src="smith.png" alt="タイトル"></h1>
 <h2>説明</h2>
 <p>下のチュートリアルスタートのボタンを押すとこのページの使い方を学ぶことができます。</p>
 <button onClick="introJs().start()">チュートリアルスタート</button>

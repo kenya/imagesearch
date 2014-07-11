@@ -5,6 +5,9 @@
     $val=$_COOKIE["cdata"];
     $count=count($val);
     
+    if($cookieValue[1]==0)
+    $cookieValue[1]="人数指定なし";
+    
     if($cookieValue[0]!==null){
         if(isset($_COOKIE["cdata"])){
             $string=$cookieValue[0]."&nbsp;&nbsp;&nbsp;&nbsp;";
@@ -75,7 +78,7 @@ $(function() {
     for($i=0;$i<$count;$i++){
         $word=explode("&nbsp;&nbsp;&nbsp;&nbsp;",$val[$count-$i-1]);
         
-        echo "「"."<a href='g_03.php?keyword=$word[0]&number=$word[1]'>".$val[$count-$i-1]."」</a>";
+        echo "「"."<a href='g_03.php?keyword=$word[0]&number=$word[1]'>".$val[$count-$i-1]."</a>」";
     }
     if(isset($_GET['keyword']) && isset($_GET['number'])){
         $_POST["keyword"]=$_GET['keyword'];
@@ -91,11 +94,11 @@ $(function() {
 <p>
 <span data-intro="ここに検索のキーワードを入力して下さい。　例: 大学" data-step="1">
 <span data-intro="もしくは検索のキーワードだけを入力して、" data-step="4">
-検索キーワード：<input type="text" placeholder="Input word" name="keyword" size=40/>
+検索キーワード：<input type="text" placeholder="Input word" name="keyword" size="40"/>
 </span>
 </span>
 <span data-intro="ここに人数を入力して下さい。 例: 4<br>人数の範囲指定をする場合<br>一人から四人を範囲指定する例: 1-4" data-step="2">
-写真中の人の数：<input type="text" placeholder="Input number of person(s)"name="number" size=30 />
+写真中の人の数：<input type="text" placeholder="Input number of person(s)"name="number" size="30" />
 </span>
 <span data-intro="検索のキーワードと人数を入力し終えたらこのボタンを押して下さい。" data-step="3">
 <span data-intro="こちらのボタンを押して下さい。" data-step="5">
@@ -107,7 +110,7 @@ $(function() {
 </div>
 
 <?php
-		// tfファイルの読み込み　１行ずつ　最後まで
+    // tfファイルの読み込み　１行ずつ　最後まで
 	$tf_data = array( array());
 	$tffile = "tfimg.all";
 	$f1 = fopen($tffile, "r");
@@ -118,10 +121,10 @@ $(function() {
 		@$tf_data[$tf_line[0]][$tf_line[2]] = $tf_line[1];
 	}
 	fclose($f1);
-		// tfファイルの読み込み　ここまで
+    // tfファイルの読み込み　ここまで
 	
 	
-		// fcファイルの読み込み　１行ずつ　最後まで
+    // fcファイルの読み込み　１行ずつ　最後まで
 	$fc_data = array();
 	$fcfile = "fcimg.all";
 	$f2 = fopen($fcfile, "r");
@@ -132,10 +135,10 @@ $(function() {
 		$fc_data[$fc_line[1]] = $fc_line[0];
 	}
 	fclose($f2);
-		// fcファイルの読み込み　ここまで
+    // fcファイルの読み込み　ここまで
 	
 	
-		// 以下、検索処理
+    // 以下、検索処理
 	$result_num = 0;
 	$num;
 	$search_result; //[][0:ファイル名 1:キーワード頻度 2:人数]
@@ -147,7 +150,7 @@ $(function() {
 		if(check_number($number_han) == 0) {
 			echo "人数を正しく入力して下さい。";
 		} elseif(array_key_exists($_POST["keyword"], $tf_data) && $_POST["keyword"] <>null ){
-			if($number_han[0]==null){
+			if($number_han[0]==null || $number_han[0]=="人数指定なし"){
 				echo "キーワード「".$_POST["keyword"]."」　人数「指定なし」での検索結果<br>\n";
 				$num = -1;
 				array_push($searching_number, $number_han);
@@ -183,7 +186,7 @@ $(function() {
 	}
 	
 	if(isset($_POST["keyword"]))
-		echo "検索結果は".$result_num."件でした。";
+    echo "検索結果は".$result_num."件でした。";
 	
 	if(isset($search_result)) {
 		echo "<div id='thumbnails'>\n";

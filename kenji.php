@@ -107,7 +107,6 @@ if(isset($_POST["keyword"]))
 echo "検索結果は".$result_num."件でした。";
 
 ?>
-		</div>
 
 		<script src="js/three.min.js"></script>
 		<script src="obj/Bird.js"></script>
@@ -527,6 +526,7 @@ echo "検索結果は".$result_num."件でした。";
 			}
 
 		</script>
+		</div>
 
 	</body>
 </html>

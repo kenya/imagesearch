@@ -7,10 +7,14 @@ body{
 	font-size:0.9em;
 	background-color: #ffffff;
 	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0px;
+	overflow: hidden;
 }
-
+#info {
+				position: absolute;
+				top: 0px; width: 100%;
+				padding: 5px;
+			}
 .my-sticky-element.stuck {
         position:fixed;
         top:0;
@@ -48,6 +52,6 @@ position: fixed;
 width:100%;
 text-align:center;
 top:100%;
-margin-top: -47px;
+margin-top: -35px;
 background-color:#ffffff;
 }

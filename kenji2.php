@@ -38,9 +38,7 @@
 <link href="css/lightbox.css" rel="stylesheet" />
 <link rel="stylesheet" href="css/introjs.css" type="text/css">
 
-<script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/lightbox.min.js"></script>
-<script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
 <script src="js/waypoints.js" type="text/javascript"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript" ></script>
 <script src="./js/waypoints.min.js"></script>
@@ -56,8 +54,8 @@ $(document).ready(function() {
 
 $(document).ready(function(){
 				  $("#thumbnails img").MyThumbnail({
-												   thumbWidth:  200,
-												   thumbHeight: 150,
+												   thumbWidth:  300,
+												   thumbHeight: 250,
 												   backgroundColor:"#ccc",
 												   imageDivClass:"myPic"
 												   });

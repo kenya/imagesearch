@@ -56,8 +56,8 @@ $(document).ready(function() {
 
 $(document).ready(function(){
 				  $("#thumbnails img").MyThumbnail({
-												   thumbWidth:  200,
-												   thumbHeight: 150,
+												   thumbWidth:  300,
+												   thumbHeight: 250,
 												   backgroundColor:"#ccc",
 												   imageDivClass:"myPic"
 												   });

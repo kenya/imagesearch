@@ -156,9 +156,7 @@ $(function() {
 				array_push($searching_number, $number_han);
 			} elseif(count($number_han) == 2) {
 				echo "キーワード「".$_POST["keyword"]."」　人数「$number_han[0]人から $number_han[1]人」での検索結果<br>\n";
-				foreach($number_han as $val) {
-					array_push($searching_number, $val);
-				}
+				$searching_number = add_array($number_han);
 			} else {
 				echo "キーワード「".$_POST["keyword"]."」　人数「";
 				echo $number_han[0]."人」での検索結果<br>\n";
@@ -185,7 +183,7 @@ $(function() {
 		}
 	}
 	
-	if(isset($_POST["keyword"]))
+	if(isset($_POST["keyword"]) or isset($_POST["number"]))
     echo "検索結果は".$result_num."件でした。";
 	
 	if(isset($search_result)) {
@@ -211,6 +209,19 @@ $(function() {
 		} else {
 			return 0;
 		}
+	}
+	function add_array($array)
+	{
+		$searching = array();
+		if($array[0] > $array[1]) {
+					$temp = $array[0];
+					$array[0] = $array[1];
+					$array[1] = $temp;
+		}
+		for($i = $array[0]; $i<=$array[1]; $i++) {
+			array_push($searching, $i);
+		}
+		return $searching;
 	}
     
 	?>
